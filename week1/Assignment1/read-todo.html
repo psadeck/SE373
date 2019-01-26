@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>To-Do List 
+            <br/><br/>
+        </div>
+        
+        <script type="text/javascript">
+
+            let div = document.querySelector('div')
+            let htmlStr = ''
+            let rows = '';
+                            
+            let myRequest = 'http://localhost:3000/todo.json'           
+            
+            fetch(myRequest)
+            .then(function(response) {              
+                  return response.json()
+                })
+            .then(function(json) {
+                               
+                /*
+                for (let index in json) {
+                    htmlStr += `<li> User Id: ${json[index].userId} ID: ${json[index].id} Title: ${json[index].title} Completed: ${json[index].completed} </li>`
+                } 
+                */            
+               
+                //div.innerHTML += htmlStr      
+                
+                for (let index in json) {
+                    for (let value in json[index]) {
+                        rows += '<tr><td>' + value + ' : </td><td> ' + json[index][value] + '</td></tr>' + ' '                        
+                    }
+                    rows += '<br/>'
+                }
+                       
+                div.innerHTML += rows
+            })
+                                
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,21 @@
+In Node.js Create a server that will do the following:
+
+When the user goes to http://localhost:3000/todo it will display the demo json file (todo.json or download it) 
+with the content-type as "application/json". Display the file as is.
+
+When the user goes to http://localhost:3000/index it will display an html page that will have your name and three things you 
+like in an ordered list.  It can be about food, places you have visited etc.   Add two links on the page after the list. 
+One for the todo page and the other for the read-todo page.
+
+Create a third page called http://localhost:3000/read-todo .It will display an html page that will make an AJAX(fetch) 
+request to  http://localhost:3000/todo (Links to an external site.)Links to an external site. to get the JSON contents.  
+Then loop through the content to display it in the HTML. 
+
+Since there are three possible pages, have index be the default.  If I go to  http://localhost:3000/fake-page the index page 
+should be shown. To do this you will need to redirect the user using the following syntax. 
+
+/* Send the HTTP header
+* HTTP Status: 301 : Moved Permanently
+* Location:'http://' +  'The host of the requested location' + the path to the page that you want to be redirected to.
+*/
+response.writeHead(301, {'Location': "http://" + request.headers['host'] + '/index.html' });
