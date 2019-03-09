@@ -1,0 +1,28 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "Full Stack vue and express app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "install": "npm-git install"
+  },
+  "author": "Pete Sadeck",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13",
+    "npm-git-install": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "gitDependencies": {
+    "private-package-name": "git@private.git.server:psadeck/FullStack",
+    "public-package-name": "https://github.com/psadeck/FullStack"
+  }
+}
